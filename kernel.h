@@ -3,6 +3,8 @@
 
 #include <QObject>
 
+#include "gui.h"
+
 class Kernel
 {
 public:
@@ -12,6 +14,8 @@ public:
     void run();
 
 private:
+    // Интерфейс
+    GUI* gui;
 };
 
 #endif // KERNEL_H
