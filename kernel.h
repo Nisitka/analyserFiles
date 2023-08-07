@@ -4,6 +4,7 @@
 #include <QObject>
 
 #include "gui.h"
+#include "analyser.h"
 
 class Kernel
 {
@@ -16,6 +17,9 @@ public:
 private:
     // Интерфейс
     GUI* gui;
+
+    // Анализатор директорий
+    analyser* anDirs;
 };
 
 #endif // KERNEL_H

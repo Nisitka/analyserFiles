@@ -11,6 +11,14 @@ class GUI : public QWidget
 {
     Q_OBJECT
 
+signals:
+    // Запуск анализатора
+    void emitRunAnalyser(const QString& dir, int type);
+
+public slots:
+    // Обновить значение прогресса
+    void updateValProgress(int percent); // в %
+
 public:
     explicit GUI(QWidget *parent = nullptr);
     ~GUI();

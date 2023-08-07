@@ -3,6 +3,8 @@
 
 #include <QFileDialog>
 
+#include "analyser.h"
+
 GUI::GUI(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GUI)
@@ -34,11 +36,19 @@ void GUI::setDirFiles()
     ui->dirFilesLineEdit->setText(dir);
 }
 
+void GUI::updateValProgress(int percent)
+{
+    ui->workAnalyserProgressBar->setValue(percent);
+}
+
 void GUI::runAnalyser()
 {
     // Подготавливаем полоску прогресса
     ui->workAnalyserProgressBar->setValue(0);
     ui->workAnalyserProgressBar->show();
+
+    // Запускаем анализатор
+    emitRunAnalyser(ui->dirFilesLineEdit->text(), int(analyser::def));
 }
 
 GUI::~GUI()
